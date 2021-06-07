@@ -1,0 +1,33 @@
+{% extends "base.html"%}
+
+{% block app_content %}
+
+<a class="btn btn-default" href="{{url_for('jogos.create')}}">Adicionar Novo Jogo</a>
+<br>
+<br>
+{% for rodada in jogos %}
+<table class="table table-bordered " >
+    <thead >
+        <tr>
+            <th scope="col" >Rodada {{rodada}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for jogo in jogos[rodada]%}
+        <tr>
+            <td>
+                <a href="{{ url_for('jogos.update', id=jogo.id)}}">
+                    <img class="escudo-mini" src="{{jogo.mandante.escudo}}">
+                    {{jogo.mandante.nome}}
+                    {{jogo.gols_mandante}} x
+                    {{jogo.gols_visitante}}
+                    {{jogo.visitante.nome}}
+                    <img class="escudo-mini" src="{{jogo.visitante.escudo}}">
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endfor %}
+{% endblock %}

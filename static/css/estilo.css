@@ -1,0 +1,104 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap');
+
+
+.escudo-mini{
+    height: 2em;
+}
+
+.ico{
+    height: 15px;
+}
+
+#bra{
+    color: white;
+}
+
+.navbar-default{
+    background-color: #6AB200;
+    color: white;
+}
+
+tr td:first-child{
+    width: 1%;
+}
+table tr:not(:first-child) td:nth-child(odd):not(:first-child){
+    background-color: #f8f8f8;
+}
+
+.borderless{
+    border-width: 0px;
+}
+
+a > li{
+    color: black;
+}
+
+.versus-symbol{
+    font-weight: bold ;
+    font-size: xx-large;
+}
+
+.center{
+    display: table;
+    margin: 1em auto;
+}
+
+.novojogo {
+    margin-left: 40%;
+    padding-bottom: 50px;
+    font-weight: bolder;
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+
+#caixa{
+    border: 1px solid grey;
+    height: 300px;
+    width: 500px;
+    padding: 30px;
+    background-color: #f8f8f8;
+    margin-left: 30%;
+    -webkit-box-shadow: 1px 3px 33px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 3px 33px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 3px 33px 0px rgba(0,0,0,0.75);
+}
+
+.rodada{
+    border: solid black 1 px;
+    margin-bottom: 40px;
+    font-size: x-large;
+}
+.jogo_placar{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.jogo_placar input{
+    font-size: xxx-large;
+    -webkit-text-stroke-width: thick;
+    width: 50px;
+    text-align: center  ;
+}
+
+.cartoes{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.env{
+    padding-top: 40px;
+}
+
+#enviar{
+    color: white;
+    width: 150px;
+    margin-left: 25%;
+    background-color: #6AB200;
+    border-color: #ebccd1;
+    font-weight: bolder;
+}
+
+
+
+

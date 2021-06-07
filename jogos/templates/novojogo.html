@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+<!-- Esse bloco é um gerenciamento de Erro, não precisa mexer -->
+{% if errors %}
+<div class="container">
+	{%- for msg in errors %}
+	<div class="alert alert-danger" role="alert">
+		{{ msg }}
+		{% for error in errors[msg] %}
+		{{error}}
+		{% endfor %}
+	</div>
+	{% endfor -%}
+</div>
+{% endif %}
+
+
+<form action="" method="POST" novalidate>
+	{{ form.hidden_tag() }}
+	<div class="container-fluid">
+		<h1 class="novojogo">{{ title }}</h1>
+		<div class="rodada">
+			<div class="row-md-4 text-center">
+				{{form.rodada.label}}: {{form.rodada(size=8)}}
+			</div>
+			<div class="row-md-4 text center">
+				{{ form.data.label}}: {{form.data()}}
+			</div>
+		</div>
+		<div id="caixa">
+			<div class="jogo_placar">
+				{{ form.mandante() }}
+				{{ form.gols_mandante(size=2)}}
+				<div>
+					<h1>x</h1>
+				</div>
+				{{ form.gols_visitante(size=2)}}
+				{{ form.visitante() }}
+			</div>
+			<div class="cartoes">
+				<div>
+					<img class="escudo-mini" src="{{ url_for('static', filename='images/am.png') }}">
+					{{ form.amarelos_mandante(size=2) }}
+					<img class="escudo-mini" src="{{ url_for('static', filename='images/vm.png') }}">
+					{{ form.vermelhos_mandante(size=2) }}
+				</div>
+				<div>
+					<img class="escudo-mini" src="{{ url_for('static', filename='images/am.png') }}">
+					{{ form.amarelos_visitante(size=2) }}
+					<img class="escudo-mini" src="{{ url_for('static', filename='images/vm.png') }}">
+					{{ form.vermelhos_visitante(size=2) }}
+				</div>
+			</div>
+			<div class="env">
+				{{form.enviar(class='btn btn-sucess')}}
+				{% if jogo %}
+				<a class="btn btn-danger" href="{{url_for('jogos.delete', id=jogo.id)}}">Deletar</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	</div>
+</form>
+
+{% endblock %}
